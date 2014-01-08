@@ -13,7 +13,7 @@ alias ls='ls --color'
 # Start tmux only on interactive mode
 # To test interactive shell : http://www.tldp.org/LDP/abs/html/intandnonint.html
 # ---
-if [ -v PS1 ] && [ `which tmux 2> /dev/null` -a -z "$TMUX" ]; then
+if [ ! -z $PS1 ] && [ `which tmux 2> /dev/null` -a -z "$TMUX" ]; then
     tmux attach || tmux new; exit
 fi
 
