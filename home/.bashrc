@@ -9,6 +9,8 @@ fi
 # ---
 alias tmux="tmux -2" # to enable 256 colors
 alias ls='ls --color'
+alias runPhpunit="./bin/phpunit -c app src/"
+alias runPhpunitWithCoverage="./bin/phpunit -c app --coverage-text src/"
 
 # see http://qq.is/article/ssh-keys-through-screen
 # Predictable SSH authentication socket location.
