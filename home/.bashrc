@@ -42,6 +42,7 @@ shopt -s histappend
 
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+export PS1="\h\w:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ "
 
 # User specific aliases and functions
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
