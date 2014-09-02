@@ -7,7 +7,7 @@ Usage
 -----
 
 ```
-$ git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+$ git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 $ printf '\nsource "$HOME/.homesick/repos/homeshick/homeshick.sh"' >> $HOME/.bashrc
 $ source $HOME/.bashrc
 $ homeshick clone https://github.com/frduarte/dotfiles
