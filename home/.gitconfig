@@ -11,11 +11,14 @@
   pager  = true
 
 [alias]
-    co = checkout
+  co = checkout
 	st = status
 	ci = commit
-    ls = log --pretty=format:'%C(yellow)%h%Creset %ar\t| %Cgreen%an%Creset - %s'
+  ls = log --pretty=format:'%C(yellow)%h%Creset %ar\t| %Cgreen%an%Creset - %s'
 	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %ar)%Creset'
-    wc = whatchanged -p --abbrev-commit --pretty=medium
-    authors = shortlog -s
-    lsmy    = !(git ls --author="$(git config user.email)")
+  wc = whatchanged -p --abbrev-commit --pretty=medium
+  authors = shortlog -s
+  lsmy    = !(git ls --author="$(git config user.email)")
+  
+[core]
+	editor = vi
