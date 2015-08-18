@@ -23,3 +23,5 @@
 	authors = shortlog -s
 	lsmy    = !(git ls --author="$(git config user.email)")
 
+[push]
+	default = current
