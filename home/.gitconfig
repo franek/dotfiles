@@ -1,24 +1,30 @@
 [user]
-	name = François DUME
-	email = francois.dume@arte.tv
+	email = franek@users.noreply.github.com
+	name = François D.
 
-[color]
-  diff   = auto
-  status = auto
-  branch = auto
-  interactive = auto
-  ui     = true
-  pager  = true
-
-[alias]
-  co = checkout
-	st = status
-	ci = commit
-  ls = log --pretty=format:'%C(yellow)%h%Creset %ar\t| %Cgreen%an%Creset - %s'
-	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %ar)%Creset'
-  wc = whatchanged -p --abbrev-commit --pretty=medium
-  authors = shortlog -s
-  lsmy    = !(git ls --author="$(git config user.email)")
-  
 [core]
 	editor = vi
+
+[color]
+	diff   = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui     = true
+	pager  = true
+
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	ls = log --pretty=format:'%C(yellow)%h%Creset %ar\t| %Cgreen%an%Creset - %s'
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %ar)%Creset'
+	wc = whatchanged -p --abbrev-commit --pretty=medium
+	authors = shortlog -s
+	lsmy    = !(git ls --author="$(git config user.email)")
+
+[push]
+	default = current
+
+[pull]
+	rebase = preserve
