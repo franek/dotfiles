@@ -42,4 +42,7 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export PS1="\h\w:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ "
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+source "$HOME/.homeshick/repos/homeshick/homeshick.sh"
+
+# add support for hub (https://github.com/github/hub)
+eval "$(hub alias -s)"
