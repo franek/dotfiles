@@ -1,18 +1,16 @@
 [user]
 	email = franek@users.noreply.github.com
 	name = François D.
-
 [core]
 	editor = vi
-
+	filemode = true
 [color]
-	diff   = auto
+	diff = auto
 	status = auto
 	branch = auto
 	interactive = auto
-	ui     = true
-	pager  = true
-
+	ui = true
+	pager = true
 [alias]
 	co = checkout
 	st = status
@@ -21,10 +19,8 @@
 	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %ar)%Creset'
 	wc = whatchanged -p --abbrev-commit --pretty=medium
 	authors = shortlog -s
-	lsmy    = !(git ls --author="$(git config user.email)")
-
+	lsmy = !(git ls --author="$(git config user.email)")
 [push]
 	default = current
-
 [pull]
 	rebase = preserve

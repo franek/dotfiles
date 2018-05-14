@@ -25,10 +25,10 @@ alias journal="cp -n ~/SparkleShare/dropbox/journal/template.txt ~/SparkleShare/
 COUNT=`tmux ls 2>/dev/null | wc -l`
 # We're not in a tmux session
 # and no session is running (in case of ssh on the same machine)
-if [[ -z "$TMUX" && "$COUNT" -eq 0 ]]
-then    
-    tmux new;
-fi
+#if [[ -z "$TMUX" && "$COUNT" -eq 0 ]]
+#then
+#    tmux new;
+#fi
 
 # Ajoute la date dans l'historique des commandes (history)
 export HISTTIMEFORMAT="%d/%m/%Y %H:%M:%S "
@@ -46,3 +46,8 @@ source "$HOME/.homeshick/repos/homeshick/homeshick.sh"
 
 # add support for hub (https://github.com/github/hub)
 eval "$(hub alias -s)"
+
+# set PATH so it includes python's private bin if it exists
+if [ -d ~/.local/bin ] ; then
+    PATH="${PATH}":~/.local/bin
+fi
