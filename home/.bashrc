@@ -10,6 +10,8 @@ fi
 alias tmux="tmux -2" # to enable 256 colors
 alias ls='ls --color'
 alias journal="cp -n ~/SparkleShare/dropbox/journal/template.txt ~/SparkleShare/dropbox/journal/$(date +%Y-%m-%d).txt && gedit ~/SparkleShare/dropbox/journal/$(date +%Y-%m-%d).txt &"
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # see http://qq.is/article/ssh-keys-through-screen
 # Predictable SSH authentication socket location.
@@ -51,3 +53,7 @@ eval "$(hub alias -s)"
 if [ -d ~/.local/bin ] ; then
     PATH="${PATH}":~/.local/bin
 fi
+
+phan() { docker run -v $PWD:/mnt/src --rm -u "$(id -u):$(id -g)" cloudflare/phan:latest $@; return $?; }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

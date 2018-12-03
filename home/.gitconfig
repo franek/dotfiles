@@ -24,3 +24,8 @@
 	default = current
 [pull]
 	rebase = preserve
+[remote "origin"]
+	prune = true
+[rebase]
+	autostash = true
+	autorebase = true
