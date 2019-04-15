@@ -12,6 +12,9 @@ alias ls='ls --color'
 alias journal="cp -n ~/SparkleShare/dropbox/journal/template.txt ~/SparkleShare/dropbox/journal/$(date +%Y-%m-%d).txt && gedit ~/SparkleShare/dropbox/journal/$(date +%Y-%m-%d).txt &"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+# pour resetter le trackpad après mis en veille (Lenovo X1 Carbon)
+alias reset_trackpad="echo -n 'none' | sudo tee /sys/bus/serio/devices/serio1/drvctl && echo -n 'reconnect' | sudo tee /sys/bus/serio/devices/serio1/drvctl"
+
 
 # see http://qq.is/article/ssh-keys-through-screen
 # Predictable SSH authentication socket location.
@@ -44,7 +47,7 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export PS1="\h\w:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ "
 
-source "$HOME/.homeshick/repos/homeshick/homeshick.sh"
+source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # add support for hub (https://github.com/github/hub)
 eval "$(hub alias -s)"
