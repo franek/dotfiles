@@ -6,3 +6,7 @@ alias pbpaste='xclip -selection clipboard -o'
 # pour resetter le trackpad après mis en veille (Lenovo X1 Carbon)
 alias reset_trackpad="echo -n 'none' | sudo tee /sys/bus/serio/devices/serio1/drvctl && echo -n 'reconnect' | sudo tee /sys/bus/serio/devices/serio1/drvctl"
 alias whatsmyip="curl https://ifconfig.co/"
+
+# elasticsearch
+# démarrer cerebro via docker
+alias cerebro="docker run --rm -p 9000:9000 lmenezes/cerebro"
