@@ -1,16 +1,14 @@
 Dotfiles managed by chezmoi
 ====
 
-
 Getting started
 ----
 
-These dotfiles are managed through [chezmoi](https://github.com/twpayne/chezmoi). You need to install before getting these configurations files.
+These dotfiles are managed through [chezmoi](https://github.com/twpayne/chezmoi). You need to install it before getting these configurations files.
 
-Configuration
----
+After installing chezmoi:
 
-This configuration uses KeepassXC in order to store some credentials. You should indicate to chezmoi where to find your KeepassXC database.
+1- Configure your KeepassXC database path.
 
 ```
 $ chezmoi edit-config
@@ -21,4 +19,20 @@ $ chezmoi edit-config
   database = "/home/user/path/to/database.kdbx"
 ```
 
+2- Retrieve dotfiles configuration
 
+```
+$ chezmoi init git@github.com:franek/dotfiles.git
+```
+
+3- See what we will apply
+
+```
+$ chezmoi diff
+```
+
+4- If you are ok with diff, 
+
+```
+$ chezmoi apply
+```
