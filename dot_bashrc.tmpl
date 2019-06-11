@@ -58,3 +58,10 @@ fi
 phan() { docker run -v $PWD:/mnt/src --rm -u "$(id -u):$(id -g)" cloudflare/phan:latest $@; return $?; }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+{{- if (index . "blackfire") }}
+export BLACKFIRE_CLIENT_ID={{ .blackfire.client_id }}
+export BLACKFIRE_CLIENT_TOKEN={{ .blackfire.client_token }}
+export BLACKFIRE_SERVER_ID={{ .blackfire.server_id }}
+export BLACKFIRE_SERVER_TOKEN={{ .blackfire.server_token }}
+{{- end }}
