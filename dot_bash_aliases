@@ -10,4 +10,7 @@ alias whatsmyip="curl https://ifconfig.co/"
 # elasticsearch
 # démarrer cerebro via docker
 alias cerebro="docker run --rm -p 9000:9000 lmenezes/cerebro"
+# killer screenkey
 alias kscreenkey="pkill screenkey"
+alias phan='docker run -v $PWD:/mnt/src --rm -u "$(id -u):$(id -g)" cloudflare/phan:latest $@; return $?; '
+
