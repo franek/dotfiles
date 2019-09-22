@@ -40,8 +40,6 @@ shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 export PS1="\h\w:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ "
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-
 # add support for hub (https://github.com/github/hub)
 eval "$(hub alias -s)"
 
@@ -55,7 +53,7 @@ if [ -d ~/bin ] ; then
     PATH="${PATH}":~/bin
 fi
 
-[ -f /usr/share/bash-completion/completions/fzf ] && source /usr/share/bash-completion/completions/fzf
+[ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
 
 {{- if (index . "blackfire") }}
 export BLACKFIRE_CLIENT_ID={{ .blackfire.client_id }}
