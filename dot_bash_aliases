@@ -1,5 +1,10 @@
 alias tmux="tmux -2" # to enable 256 colors
-alias ls='ls --color'
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias journal="cp -n ~/SparkleShare/dropbox/journal/template.txt ~/SparkleShare/dropbox/journal/$(date +%Y-%m-%d).txt && gedit ~/SparkleShare/dropbox/journal/$(date +%Y-%m-%d).txt &"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
