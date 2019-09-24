@@ -1,5 +1,11 @@
 # .bashrc
 
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
@@ -19,14 +25,10 @@ fi
 #    export SSH_AUTH_SOCK=$SOCK
 #fi
 
-# see http://robinwinslow.co.uk/2012/07/20/tmux-and-ssh-auto-login-with-ssh-agent-finally/
-COUNT=`tmux ls 2>/dev/null | wc -l`
-# We're not in a tmux session
-# and no session is running (in case of ssh on the same machine)
-#if [[ -z "$TMUX" && "$COUNT" -eq 0 ]]
-#then
-#    tmux new;
-#fi
+# Always start tmux
+if [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
 
 # Ajoute la date dans l'historique des commandes (history)
 export HISTTIMEFORMAT="%d/%m/%Y %H:%M:%S "
