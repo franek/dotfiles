@@ -58,6 +58,14 @@ fi
 # Enable fzf key-bindings for history
 [ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
 
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bindings/bash/powerline.sh
+fi
+
+
 # configure prompt with git
 # source : https://delicious-insights.com/fr/articles/prompt-git-qui-dechire/
 # read this /usr/lib/git-core/git-sh-prompt for more explanations
