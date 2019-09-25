@@ -1,6 +1,12 @@
 Dotfiles managed by chezmoi
 ====
 
+Requirements
+---
+
+ * tmux (`sudo apt install tmux`)
+ * powerline (`sudo apt install powerline`)
+
 Getting started
 ----
 
