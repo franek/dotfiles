@@ -58,12 +58,14 @@ fi
 # Enable fzf key-bindings for history
 [ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
 
-if [ -f `which powerline-daemon` ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bindings/bash/powerline.sh
-fi
+# Activation de powerline pour le prompt
+# /!\ Ne fonctionne pas. Je ne comprends pas pourquoi.
+# iif [ -f `which powerline-daemon` ]; then
+#  powerline-daemon -q
+#  POWERLINE_BASH_CONTINUATION=1
+#  POWERLINE_BASH_SELECT=1
+#  . /usr/share/powerline/bindings/bash/powerline.sh
+# fi
 
 
 # configure prompt with git
@@ -77,6 +79,7 @@ export GIT_PS1_SHOWCOLORHINTS=1
 # replace \w par \W to get full path.
 export PROMPT_COMMAND='__git_ps1 "\u@\h:\W" " \\\$ "'
 
+# configure blackfire
 {{- if (index . "blackfire") }}
 export BLACKFIRE_CLIENT_ID={{ .blackfire.client_id }}
 export BLACKFIRE_CLIENT_TOKEN={{ .blackfire.client_token }}
