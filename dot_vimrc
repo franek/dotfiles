@@ -1,5 +1,3 @@
-# Enable powerline addons 
-# All vim addons are installed into this directory
 set rtp+=/usr/share/vim/addons/
 set laststatus=2
 set t_Co=256

@@ -4,6 +4,7 @@
 [core]
 	editor = vi
 	filemode = true
+	excludesfile = ~/.gitignore_global
 [color]
 	diff = auto
 	status = auto
@@ -20,6 +21,8 @@
 	wc = whatchanged -p --abbrev-commit --pretty=medium
 	authors = shortlog -s
 	lsmy = !(git ls --author="$(git config user.email)")
+        # checkout a PR
+        get-pr = "!f() { hub pr checkout "$1"; }; f"
 [push]
 	default = current
 [pull]
