@@ -5,17 +5,19 @@ alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias journal="cp -n ~/SparkleShare/dropbox/journal/template.txt ~/SparkleShare/dropbox/journal/$(date +%Y-%m-%d).txt && gedit ~/SparkleShare/dropbox/journal/$(date +%Y-%m-%d).txt &"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 # pour resetter le trackpad après mis en veille (Lenovo X1 Carbon)
 alias reset_trackpad="echo -n 'none' | sudo tee /sys/bus/serio/devices/serio1/drvctl && echo -n 'reconnect' | sudo tee /sys/bus/serio/devices/serio1/drvctl"
 alias whatsmyip="curl https://ifconfig.co/"
+alias meteo='curl "wttr.in/Strasbourg?lang=fr"'
+# permet d'ouvrir un fichier avec le logiciel le plus adapté
+alias open="xdg-open"
+alias top_process="ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 
 # elasticsearch
 # démarrer cerebro via docker
 alias cerebro="docker run --rm -p 9000:9000 lmenezes/cerebro"
 # killer screenkey
 alias kscreenkey="pkill screenkey"
-alias phan='docker run -v $PWD:/mnt/src --rm -u "$(id -u):$(id -g)" cloudflare/phan:latest $@; return $?; '
 
