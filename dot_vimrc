@@ -2,4 +2,7 @@ set rtp+=/usr/share/vim/addons/
 set laststatus=2
 set t_Co=256
 
-map <C-c> "+y<CR> # map CTRL+C in visual mode to copy in system buffer
+" Make vim use the system clipboard:
+set clipboard^=unnamed,unnamedplus
+" Prevent vim from clearing system clipboard buffer
+autocmd VimLeave * call system("xsel -ib", getreg('+'))
