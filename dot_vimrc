@@ -1,5 +1,8 @@
+" load powerline configuration
 set rtp+=/usr/share/vim/addons/
+" Always show statusline
 set laststatus=2
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
 " Make vim use the system clipboard:
