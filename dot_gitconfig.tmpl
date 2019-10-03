@@ -18,8 +18,8 @@
 	wc = whatchanged -p --abbrev-commit --pretty=medium
 	authors = shortlog -s
 	lsmy = !(git ls --author="$(git config user.email)")
-        # checkout a PR
-        get-pr = "!f() { hub pr checkout "$1"; }; f"
+	# checkout a PR
+	get-pr = "!f() { hub pr checkout "$1"; }; f"
 [push]
 	default = current
 [pull]
@@ -31,7 +31,7 @@
 	autorebase = true
 [tag]
 	# sort tags in a natural order
-        sort = version:refname
+	sort = version:refname
 [branch]
 	# sort branch by commiterdate
-        sort = committerdate
+	sort = committerdate
