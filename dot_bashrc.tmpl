@@ -15,16 +15,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# see http://qq.is/article/ssh-keys-through-screen
-# Predictable SSH authentication socket location.
-#SOCK="/tmp/ssh-agent-$USER-screen"
-#if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
-#then
-#    rm -f /tmp/ssh-agent-$USER-screen
-#    ln -sf $SSH_AUTH_SOCK $SOCK
-#    export SSH_AUTH_SOCK=$SOCK
-#fi
-
 # Always start tmux
 if [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
@@ -37,10 +27,6 @@ export HISTTIMEFORMAT="%d/%m/%Y %H:%M:%S "
 export HISTCONTROL=ignoredups:erasedups
 # append history entries..
 shopt -s histappend
-
-# After each command, save and reload history
-#export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-#export PS1="\h\w:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\$ "
 
 # add support for hub (https://github.com/github/hub)
 eval "$(hub alias -s)"
@@ -58,26 +44,23 @@ fi
 # Enable fzf key-bindings for history
 [ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
 
-# Activation de powerline pour le prompt
-# /!\ Ne fonctionne pas. Je ne comprends pas pourquoi.
-# iif [ -f `which powerline-daemon` ]; then
-#  powerline-daemon -q
-#  POWERLINE_BASH_CONTINUATION=1
-#  POWERLINE_BASH_SELECT=1
-#  . /usr/share/powerline/bindings/bash/powerline.sh
-# fi
-
-
-# configure prompt with git
-# source : https://delicious-insights.com/fr/articles/prompt-git-qui-dechire/
-# read this /usr/lib/git-core/git-sh-prompt for more explanations
-[ -f /usr/lib/git-core/git-sh-prompt ] && source /usr/lib/git-core/git-sh-prompt
-export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_PS1_SHOWUPSTREAM=verbose GIT_PS1_DESCRIBE_STYLE=branch
-# display branch in color
-export GIT_PS1_SHOWCOLORHINTS=1
-# replace \w par \W to get full path.
-export PROMPT_COMMAND='__git_ps1 "\u@\h:\W" " \\\$ "'
+# Activation de powerline par défaut si présent
+# Sinon, utilise la configuration de delicious insight
+if [ -f /usr/share/powerline/integrations/powerline.sh ]; then 
+    source /usr/share/powerline/integrations/powerline.sh
+else
+    # configure prompt with git
+    # source : https://delicious-insights.com/fr/articles/prompt-git-qui-dechire/
+    # read this /usr/lib/git-core/git-sh-prompt for more explanations
+    [ -f /usr/lib/git-core/git-sh-prompt ] && source /usr/lib/git-core/git-sh-prompt
+    
+    export GIT_PS1_SHOWDIRTYSTATE=1 GIT_PS1_SHOWSTASHSTATE=1 GIT_PS1_SHOWUNTRACKEDFILES=1
+    export GIT_PS1_SHOWUPSTREAM=verbose GIT_PS1_DESCRIBE_STYLE=branch
+    # display branch in color
+    export GIT_PS1_SHOWCOLORHINTS=1
+    # replace \w par \W to get full path.
+    export PROMPT_COMMAND='__git_ps1 "\u@\h:\W" " \\\$ "'
+fi
 
 # configure blackfire
 {{- if (index . "blackfire") }}
