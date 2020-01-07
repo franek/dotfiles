@@ -1,0 +1,7 @@
+. $HOME/Library/Python/3.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+
+PATH=$PATH:$HOME/Library/Python/3.7/bin:/Applications/KeePassXC.app/Contents/MacOS
+
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
