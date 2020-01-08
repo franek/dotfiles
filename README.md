@@ -42,3 +42,9 @@ $ chezmoi diff
 ```
 $ chezmoi apply
 ```
+
+TMUX
+---
+
+`CTRL+b I` will load tmux plugins.
+`CTRL+b R` will force a reload of the configuration.

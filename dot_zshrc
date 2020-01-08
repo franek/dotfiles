@@ -1,4 +1,9 @@
-. $HOME/Library/Python/3.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+# ~/.zshrc
+
+eval "$(starship init zsh)"
+
+# Powerline-status
+# . $HOME/Library/Python/3.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
 PATH=$PATH:$HOME/Library/Python/3.7/bin:/Applications/KeePassXC.app/Contents/MacOS
 

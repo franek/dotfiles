@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Install tmux plugin manager
+rm -rf .tmux/ && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+{{ else if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+brew install starship
+{{ end -}}
