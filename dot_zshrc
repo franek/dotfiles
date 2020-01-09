@@ -1,11 +1,12 @@
 # ~/.zshrc
 
 eval "$(starship init zsh)"
+eval "$(hub alias -s)"
 
 # Powerline-status
 # . $HOME/Library/Python/3.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
-PATH=$PATH:$HOME/Library/Python/3.7/bin:/Applications/KeePassXC.app/Contents/MacOS
+PATH=$PATH:/usr/local/bin:$HOME/bin:$HOME/Library/Python/3.7/bin:/Applications/KeePassXC.app/Contents/MacOS
 
 if [ -f ~/.aliases ]; then
     . ~/.aliases
