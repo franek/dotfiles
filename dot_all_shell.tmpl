@@ -1,0 +1,21 @@
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+# Always start tmux
+if [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
+
+# add support for hub (https://github.com/github/hub)
+eval "$(hub alias -s)"
+
+# set PATH so it includes python's private bin if it exists
+if [ -d ~/.local/bin ] ; then
+    PATH="${PATH}":~/.local/bin
+fi
+
+# Add ~/bin directory to path if it exists
+if [ -d ~/bin ] ; then
+    PATH="${PATH}":~/bin
+fi

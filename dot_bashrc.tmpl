@@ -11,13 +11,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
-
-# Always start tmux
-if [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
+if [ -f ~/.all_shell ]; then
+    . ~/.all_shell
 fi
 
 # Ajoute la date dans l'historique des commandes (history)
@@ -27,19 +22,6 @@ export HISTTIMEFORMAT="%d/%m/%Y %H:%M:%S "
 export HISTCONTROL=ignoredups:erasedups
 # append history entries..
 shopt -s histappend
-
-# add support for hub (https://github.com/github/hub)
-eval "$(hub alias -s)"
-
-# set PATH so it includes python's private bin if it exists
-if [ -d ~/.local/bin ] ; then
-    PATH="${PATH}":~/.local/bin
-fi
-
-# Add ~/bin directory to path if it exists
-if [ -d ~/bin ] ; then
-    PATH="${PATH}":~/bin
-fi
 
 # Enable fzf key-bindings for history
 [ -f /usr/share/doc/fzf/examples/key-bindings.bash ] && source /usr/share/doc/fzf/examples/key-bindings.bash
