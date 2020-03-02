@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Install https://github.com/romkatv/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+
 # Install tmux plugin manager
 rm -rf .tmux/ && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
@@ -7,5 +11,4 @@ rm -rf .tmux/ && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/t
 #!/bin/sh
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
-brew install starship
 {{ end -}}
