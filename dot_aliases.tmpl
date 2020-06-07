@@ -25,3 +25,5 @@ alias top_process="ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 # démarrer cerebro via docker
 alias cerebro="docker run --rm -p 9000:9000 lmenezes/cerebro"
 
+alias mitmproxy="docker run --rm -it -v $HOME/.mitmproxy:/home/mitmproxy/.mitmproxy -p 8080:8080 mitmproxy/mitmproxy:4.0.4"
+
