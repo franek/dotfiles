@@ -20,4 +20,5 @@ if [ -d ~/bin ] ; then
     PATH="${PATH}":~/bin
 fi
 
-export KUBECONFIG=~/.kube/config:~/.kube/config-sdv-prod
+export KUBECONFIG=~/.kube/config
+export COMPOSER_AUTH_ARTE='{"http-basic":{"repo.packagist.com":{"username":"token","password":"{{ keepassxcAttribute "COMPOSER_AUTH_ARTE-token" "Password" }}"}}}'
