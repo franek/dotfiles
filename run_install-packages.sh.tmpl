@@ -10,7 +10,11 @@ rm -rf .tmux/ && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/t
 #!/bin/sh
 
 # k8s
-sudo apt install kubectx
+sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo rm -rf /etc/apt/sources.list.d/kubernetes.list && echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update && sudo apt-get install -y kubectl
+curl --location --output ~/bin/kubectx https://github.com/ahmetb/kubectx/releases/download/v0.9.1/kubectx && chmod +x ~/bin/kubectx
 
 # spotify
 sudo snap install spt
@@ -18,7 +22,7 @@ sudo snap install spt
 #!/bin/sh
 
 # k8s
-brew install kubectx
+brew install kubectl kubectx
 
 # spotify
 brew install spotify-tui
