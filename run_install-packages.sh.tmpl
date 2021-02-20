@@ -8,6 +8,18 @@ rm -rf .tmux/ && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/t
 
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/sh
+
+# k8s
+sudo apt install kubectx
+
+# spotify
+sudo snap install spt
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
+
+# k8s
+brew install kubectx
+
+# spotify
+brew install spotify-tui
 {{ end -}}
