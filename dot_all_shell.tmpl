@@ -22,3 +22,4 @@ fi
 
 export KUBECONFIG=~/.kube/config-sdv-prod:~/.kube/config
 export COMPOSER_AUTH_ARTE='{"http-basic":{"repo.packagist.com":{"username":"token","password":"{{ keepassxcAttribute "COMPOSER_AUTH_ARTE-token" "Password" }}"}}}'
+export MAMI_ENCRYPT_PASSWORD='{{ keepassxcAttribute "MAMI_ENCRYPT_PASSWORD" "Password" }}'

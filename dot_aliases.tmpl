@@ -26,6 +26,7 @@ alias top_process="ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 alias cerebro="docker run --rm -p 9000:9000 lmenezes/cerebro"
 alias mitmproxy="docker run --rm -it -v $HOME/.mitmproxy:/home/mitmproxy/.mitmproxy -p 8080:8080 mitmproxy/mitmproxy:4.0.4"
 alias browsh="docker run -it --rm browsh/browsh"
+alias sdvvpn="sudo vpnc-connect /home/fdume/.sdv_vpnc.conf"
 alias organize-pictures-by-date="exiftool '-Directory<CreateDate' -d %Y/%m/%d -r ."
 alias k=kubectl
 alias kctxt=kubectxt
